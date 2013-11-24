@@ -7,107 +7,123 @@
 </head>
 <body>
 
-<form>
-	<div>
-	<!--
-		“ALL inputs must have labels.
-		The label is associated with the input using the FOR attribute.
-		The FOR attribute must match the ID of the input tag.
-	-->
-		<label for="name">
-			Name
-			<strong class="error">Please enter your name</strong>
-		</label>
-		<input type="text" id="name" class="input-text input-error" required>
-	</div>
+<header>
+	<img src="img/hunger-games-logo.svg" class="logo" alt="logo">
+	<h1 class="club">CATCHING FIRE BOOK CLUB</h1>
+</header>
 
-	<div>
-		<label for="email">E-mail Address</label>
-		<input type="email" id="email" class="input-text" value="you@example.com">
-	</div>
-
-	<div>
-		<label for="website">Website</label>
-
+<div class="form-bg">
+	<h2>Application Form</h2>
+	<form>
+		<div>
 		<!--
-			Placeholder is used to provide an example.
-			It is not a replacement for the label because it isn't accessible.
+			“ALL inputs must have labels.
+			The label is associated with the input using the FOR attribute.
+			The FOR attribute must match the ID of the input tag.
 		-->
-		<input type="url" id="website" class="input-text" placeholder="http://domain.com">
-	</div>
+			<label for="name">
+				Name
+					<strong class="error">Please enter your name</strong>
+			</label>
+			<input type="text" id="name" class="input-text input-error" placeholder="Katniss Everdeen" required>
+		</div>
 
-	<div>
-		<label for="favcolor">Favourite Colour</label>
-		<input type="color" id="favcolor">
-	</div>
+		<div>
+			<label for="email">
+			E-mail Address
+			<strong class="error">Please enter your E-mail</strong>
 
-	<div>
-		<label for="birthday">Birthday</label>
-		<input type="date" id="birthday">
+			</label>
+			<input type="email" id="email" class="input-text input-error" placeholder="you@catchingfire.com" maxlength="256" required>
+		</div>
 
-		<!--
-			type="time"
-			type:"datetime-local"
-		-->
-	</div>
+		<div>
+			<label for="phone">Phone</label>
+			<input type="tel" id="phone" class="input-text-short" maxlength="12">
+		</div>
 
-	<div>
-		<label for="age">Age</label>
-		<input type="number" id="age" pattern="[0-9]*" min="1" max="130">
-	</div>
+		<div>
+			<label for="address">Address</label>
+			<input type="text" id="address" class="input-text" required>
+		</div>
 
-	<div>
-		<label for="phone">Phone</label>
-		<input type="tel" id="phone" maxlength="12">
-	</div>
+		<div>
+			<label for="city">City</label>
+			<input type="text" id="city" class="input-text" required>
+		</div>
 
-	<div>
-		<input type="checkbox" id="code" checked>
-		<label for="code">I love code!</label>
-	</div>
+		<div>
+			<label for="province">Province</label>
+			<select id="province" class="input-text-short">
+				<option></option>
+				<option>Alberta</option>
+				<option>British Columbia</option>
+				<option>Manitoba</option>
+				<option>New Brunswick</option>
+				<option>Newfounland & Labrador</option>
+				<option>Northwest Territories</option>
+				<option>Nova Scotia</option>
+				<option>Nunavut</option>
+				<option>Ontario</option>
+				<option>Prince Edward Island</option>
+				<option>Québec</option>
+				<option>Saskatchewan</option>
+				<option>Yukon</option>
+			</select>
+		</div>
 
-	<fieldset>
-		<legend>How satisfied are you with life?</legend>  <!-- here goes the Question for the checkboxes -->
+		<div>
+			<label for="postal">Postal Code</label>
+			<input type="text" id="postal" class="input-text-short" maxlength="7"  placeholder="A1A-1A1"required>
+		</div>
 
-		<!--
-			The name attribute is how the browser knows to group the radio buttons together
-		-->
+		<div>
+			<label for="time">What time of day would be best to meet?</label>
+			<input type="time" id="time" class="input-text" required>
+		</div>
 
-		<input type="radio" id="extreme" name="satisfaction">
-		<label for="extreme">Extremely dissatisfied</label>
+		<div>
+			<label for="books">How many books have you read this year?</label>
+			<input type="number" id="books" class="input-text" pattern="[0-9]*" min="1" max="100">
+		</div>
 
-		<input type="radio" id="dissatisfied" name="satisfaction">
-		<label for="dissatisfied">Dissatisfied</label>
+		<div>
+			<label for="description">Describe your favourite book & author</label>
+			<input type="textarea" id="description" class="input-text">
+		</div>
 
-		<input type="radio" id="neutral" name="satisfaction">
-		<label for="neutral">Neutral</label>
+		<fieldset class="">
+			<legend>How much do you love Young Adult Literature?</legend>
+				<ol>
+						<li>
+							<input type="radio" id="extreme" name="satisfaction">
+							<label for="extreme">Never ever</label>
+						</li>
 
-		<input type="radio" id="satisfied" name="satisfaction">
-		<label for="satisfied">Satisfied</label>
+						<li>
+							<input type="radio" id="dissatisfied" name="satisfaction">
+							<label for="dissatisfied">Not much</label>
+						</li>
 
-		<input type="radio" id="extremegood" name="satisfaction">
-		<label for="extremegood">Extremely Satisfied</label>
-	</fieldset>
+						<li>
+							<input type="radio" id="neutral" name="satisfaction">
+							<label for="neutral">Irrelevant</label>
+						</li>
 
-	<div>
-		<label for="bio">Describe yourself</label>
-		<textarea id="bio" class="input-text"></textarea>
-	</div>
+						<li>
+							<input type="radio" id="satisfied" name="satisfaction">
+							<label for="satisfied">I read them</label>
+						</li>
 
-	<div>
-		<label for="dino">Favourite Dinosaur</label>
-		<select id="dino">
-			<option></option>
-			<option>Pteranadon</option>
-			<option>Triceratops</option>
-			<option>Stegasaurus</option>
-			<option>Dimetrodon</option>
-			<option selected>T-Rex</option>
-		</select>
-	</div>
+						<li>
+							<input type="radio" id="extremegood" name="satisfaction">
+							<label for="extremegood">Love them all</label>
+						</li>
+					</ol>
+		</fieldset>
 
-	<button type="submit">Submit</button>
-</form>
-
+		<button type="submit">SUBMIT</button>
+	</form>
+</div>
 </body>
 </html>
